@@ -19,3 +19,14 @@ jobs:
         aws-region: us-east-1
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    
+    - name: "Checkout"
+      uses: actions/checkout@v4
+
+    - name: "Terraform init"
+      working-directory: ./src
+      run: terraform init -backend-config="bucket=${{ secrets.AWS_BUCKET_NAME }}" -backend-config="key=${{ secrets.AWS_BUCKET_KEY }}" -backend-config="region=${{ secrets.AWS_BUCKET_REGION }}"
+
+    - name: "Terraform Apply Command"
+      working-directory: ./src
+      run: terraform apply --auto-approve
