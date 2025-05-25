@@ -24,7 +24,7 @@ resource "aws_instance" "frontend" {
 }
 
 resource "aws_instance" "zabbix" {
-  ami                         = "ami-0e58b56aa4d64231b"
+  ami                         = "ami-0a7d80731ae1b2435"
   instance_type               = "t2.large"
   subnet_id                   = module.vpc.public_subnets[1]
   private_ip                  = "10.0.0.121"
