@@ -1,0 +1,23 @@
+resource "aws_launch_template" "frontend" {
+  name_prefix   = "lt-frontend-terraform"
+  image_id      = "ami-06e837b403f3c262e"
+  instance_type = "t2.small"
+  key_name      = "ChavesDatabase"
+
+  network_interfaces {
+    associate_public_ip_address = true
+    security_groups             = [module.sg-frontend.security_group_id]
+  }
+
+  user_data = "IyEvYmluL2Jhc2gKc3VkbyBzdQp5dW0gdXBkYXRlIC15CmFtYXpvbi1saW51eC1leHRyYXMgaW5zdGFsbCBkb2NrZXIgLXkKc3VkbyBzZXJ2aWNlIGRvY2tlciBzdGFydApzdWRvIHVzZXJtb2QgLWFHIGRvY2tlciBlYzItdXNlcgpkb2NrZXIgcHVsbCBoZW5yaXF1ZWZiL3NpdGUtY29kZS1hd3M6dGVycmFmb3JtCmlmIFsgIiQoZG9ja2VyIHBzIC1hcSAtZiBuYW1lPXNpdGUpIiBdOyB0aGVuCiAgICBkb2NrZXIgc3RvcCBzaXRlIHx8IHRydWUKICAgIGRvY2tlciBybSBzaXRlIHx8IHRydWUKZmkKZG9ja2VyIHJ1biAtZCAtLW5hbWUgc2l0ZSAtcCA4MDozMDAwIC1wIDQ0MzozMDAwIGhlbnJpcXVlZmIvc2l0ZS1jb2RlLWF3czp0ZXJyYWZvcm0KZWNobyAiQ29udGFpbmVyIGluaWNpYWRvIGVtICQoZGF0ZSkiID4+IC92YXIvbG9nL3VzZXItZGF0YS1ydW4ubG9nCmRvY2tlciBwcyA+PiAvdmFyL2xvZy91c2VyLWRhdGEtcnVuLmxvZwpzdWRvIHJwbSAtLWltcG9ydCBodHRwczovL3BhY2thZ2VzLndhenVoLmNvbS9rZXkvR1BHLUtFWS1XQVpVSApzdWRvIHRlZSBjYXQgPiAvZXRjL3l1bS5yZXBvcy5kL3dhenVoLnJlcG8gPDwgRU9GClt3YXp1aF0KZ3BnY2hlY2s9MQpncGdrZXk9aHR0cHM6Ly9wYWNrYWdlcy53YXp1aC5jb20va2V5L0dQRy1LRVktV0FaVUgKZW5hYmxlZD0xCm5hbWU9RUwtXCRyZWxlYXNldmVyIC0gV2F6dWgKYmFzZXVybD1odHRwczovL3BhY2thZ2VzLndhenVoLmNvbS80LngveXVtLwpwcm90ZWN0PTEKRU9GCnN1ZG8gV0FaVUhfTUFOQUdFUj0iMTAuMC4wLjgxIiB5dW0gaW5zdGFsbCB3YXp1aC1hZ2VudCAteQpzdWRvIHNlZCAtaSAnLzxjbGllbnQ+LywvPFwvY2xpZW50Pi9jXDxjbGllbnQ+XG4gIDxzZXJ2ZXI+XG4gICAgPGFkZHJlc3M+MTAuMC4wLjgxPC9hZGRyZXNzPlxuICAgIDxwb3J0PjE1MTQ8L3BvcnQ+XG4gICAgPHByb3RvY29sPnRjcDwvcHJvdG9jb2w+XG4gIDwvc2VydmVyPlxuPC9jbGllbnQ+JyAvdmFyL29zc2VjL2V0Yy9vc3NlYy5jb25mCnN1ZG8gc3lzdGVtY3RsIGRhZW1vbi1yZWxvYWQKc3VkbyBzeXN0ZW1jdGwgZW5hYmxlIHdhenVoLWFnZW50CnN1ZG8gc3lzdGVtY3RsIHN0YXJ0IHdhenVoLWFnZW50CnN1ZG8gc2VkIC1pICJzL15lbmFibGVkPTEvZW5hYmxlZD0wLyIgL2V0Yy95dW0ucmVwb3MuZC93YXp1aC5yZXBv"
+
+  tag_specifications {
+    resource_type = "instance"
+
+    tags = {
+      Name       = "ASG-terraform-Frontend"
+      project    = "terraform-final-techack"
+      enviroment = "study"
+    }
+  }
+}
