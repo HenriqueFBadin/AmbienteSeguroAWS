@@ -89,7 +89,8 @@ Secrets configurados no repositório GitHub:
 ## Diagrama da Arquitetura
 
 O diagrama pode ser encontrado no repositório como arquivo Diagrama_Teckhack.drawio.png.
-![Diagrama da Arquitetura](./Diagrama_Teckhack.drawio.png)
+
+![Diagrama da Arquitetura](Diagrama_Techack.drawio.png)
 
 ## Demonstração em Vídeo
 
