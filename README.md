@@ -104,6 +104,7 @@ https://youtu.be/OwwOPw-yLHY
 
 - Separar ambientes dev/stage/producao
 - Testes de penetração automatizados via CI/CD
+- Adicionar um domínio HTTPS
 
 ---
 
