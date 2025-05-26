@@ -3,7 +3,7 @@ name: "Terraform-Teste"
 on:
   push:
     branches: ["main"]
-    paths: ["src/teste/**"]
+    paths: ["teste/**"]
   workflow_dispatch:
 
 jobs:
@@ -27,9 +27,9 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: "Terraform init"
-        working-directory: ./src
+        working-directory: ./teste
         run: terraform init -backend-config="bucket=${{ secrets.AWS_BUCKET_NAME }}" -backend-config="key=${{ secrets.AWS_BUCKET_KEY }}" -backend-config="region=${{ secrets.AWS_BUCKET_REGION }}"
 
       - name: "Terraform Apply Command"
-        working-directory: ./src
+        working-directory: ./teste
         run: terraform apply --auto-approve
