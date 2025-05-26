@@ -96,7 +96,7 @@ O diagrama pode ser encontrado no repositório como arquivo Diagrama_Teckhack.dr
 
 Um vídeo demonstrativo foi criado para apresentar de forma rápida a estrutura, execução e propósito do projeto. Assim que o vídeo for hospedado, o link poderá ser adicionado abaixo:
 
-[**Clique aqui para assistir ao vídeo do projeto**](#https://youtu.be/OwwOPw-yLHY)
+https://youtu.be/OwwOPw-yLHY
 
 ---
 
@@ -104,6 +104,7 @@ Um vídeo demonstrativo foi criado para apresentar de forma rápida a estrutura,
 
 - Separar ambientes dev/stage/producao
 - Testes de penetração automatizados via CI/CD
+- Adicionar um domínio HTTPS
 
 ---
 
