@@ -3,7 +3,7 @@ name: "Terraform-Desenvolvimento"
 on:
   push:
     branches: ["main"]
-    paths: ["src/**"]
+    paths: ["src/dev/**"]
   workflow_dispatch:
 
 jobs:

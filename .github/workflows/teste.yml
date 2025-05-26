@@ -3,7 +3,7 @@ name: "Terraform-Teste"
 on:
   push:
     branches: ["main"]
-    paths: ["src/**"]
+    paths: ["src/teste/**"]
   workflow_dispatch:
 
 jobs:
