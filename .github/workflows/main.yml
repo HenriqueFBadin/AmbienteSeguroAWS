@@ -3,7 +3,7 @@ name: "Terraform-Techack"
 on:
   push:
     branches: ["main"]
-    paths: ["src/prod/**"]
+    paths: ["src/**"]
   workflow_dispatch:
 
 jobs:
