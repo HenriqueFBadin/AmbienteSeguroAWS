@@ -138,7 +138,7 @@ A topologia usual da VPC presente na AWS:
 
 Um vídeo demonstrativo foi criado para apresentar de forma rápida a estrutura, execução e propósito do projeto. Assim que o vídeo for hospedado, o link poderá ser adicionado abaixo:
 
-https://youtu.be/OwwOPw-yLHY
+https://youtu.be/47k7mSyOVdg
 
 ---
 
