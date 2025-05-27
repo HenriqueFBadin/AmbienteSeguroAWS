@@ -66,6 +66,45 @@ A pipeline é executada automaticamente sempre que houver push para a branch mai
 
 Workflow: arquivo main.yml como exemplo
 
+```yaml
+name: "Terraform-Techack"
+
+on:
+  push:
+    branches: ["main"]
+    paths: ["src/**"]
+  workflow_dispatch:
+
+jobs:
+  terraform:
+    name: "Terraform Apply"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Configure AWS Credentials"
+        # uses: aws-actions/configure-aws-credentials@ececac1a45f3b08a01d2dd070d28d111c5fe6722
+        uses: aws-actions/configure-aws-credentials@v4.1.0
+        with:
+          # AWS Region, e.g. us-east-2
+          aws-region: us-east-1
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: "Checkout"
+        uses: actions/checkout@v4
+
+      - name: "Install Terraform"
+        uses: hashicorp/setup-terraform@v3
+
+      - name: "Terraform init"
+        working-directory: ./src
+        run: terraform init -backend-config="bucket=${{ secrets.AWS_BUCKET_NAME }}" -backend-config="key=${{ secrets.AWS_BUCKET_KEY }}" -backend-config="region=${{ secrets.AWS_BUCKET_REGION }}"
+
+      - name: "Terraform Apply Command"
+        working-directory: ./src
+        run: terraform apply --auto-approve
+
+```
+
 ### Workflow de Destruição:
 
 O projeto também conta com um workflow GitHub Actions separado para destruir toda a infraestrutura automaticamente via terraform destroy, garantindo reversibilidade completa.

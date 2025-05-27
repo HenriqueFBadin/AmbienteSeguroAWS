@@ -1,7 +1,7 @@
 resource "aws_launch_template" "frontend" {
   name_prefix   = "lt-frontend-terraform"
   image_id      = "ami-06e837b403f3c262e"
-  instance_type = "t2.small"
+  instance_type = "t2.micro"
   key_name      = "ChavesDatabase"
 
   network_interfaces {
