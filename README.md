@@ -55,7 +55,7 @@ Projetar, implementar e configurar um ambiente de desenvolvimento seguro na AWS,
 
 ## Pipeline de Execução
 
-A pipeline é executada automaticamente sempre que houver push para a branch main em arquivos da pasta ./src, ou manualmente via GitHub (workflow_dispatch).
+A pipeline é executada automaticamente sempre que houver push para a branch main em arquivos da pasta ./src, ./dev, ./teste, ou manualmente via GitHub (workflow_dispatch).
 
 ### Fluxo:
 
@@ -64,7 +64,7 @@ A pipeline é executada automaticamente sempre que houver push para a branch mai
 3. Terraform e instalado e inicializado com backend remoto.
 4. terraform apply e executado com --auto-approve.
 
-Workflow: Terraform-Techack (arquivo main.yml)
+Workflow: arquivo main.yml como exemplo
 
 ### Workflow de Destruição:
 
