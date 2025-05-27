@@ -102,7 +102,6 @@ jobs:
       - name: "Terraform Apply Command"
         working-directory: ./src
         run: terraform apply --auto-approve
-
 ```
 
 ### Workflow de Destruição:
@@ -130,6 +129,10 @@ Secrets configurados no repositório GitHub:
 O diagrama pode ser encontrado no repositório como arquivo Diagrama_Teckhack.drawio.png.
 
 ![Diagrama da Arquitetura](Diagrama_Techack.drawio.png)
+
+A topologia usual da VPC presente na AWS:
+
+![Topologia VPC](topologia_vpc.jpg)
 
 ## Demonstração em Vídeo
 
